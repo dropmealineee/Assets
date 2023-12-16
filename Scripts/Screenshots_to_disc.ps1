@@ -1,5 +1,3 @@
-<#======= DuckyScript run PowerShell file and takes a screenshot in interval and sends it to Discord Webhook =========
-#>
 
 While ($true){
 
