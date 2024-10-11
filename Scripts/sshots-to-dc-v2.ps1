@@ -9,7 +9,6 @@ else{
     $Proc = (Get-Process | Where-Object { $_.MainWindowTitle -eq 'hideme' })
     $hwnd = $Proc.MainWindowHandle
     $Type::ShowWindowAsync($hwnd, 0)
-}
 
 While ($true){
 
